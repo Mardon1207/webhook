@@ -9,6 +9,8 @@ import os
 load_dotenv()
 TOKEN = os.environ.get('TOKEN')
 
+print('TOKEN:', TOKEN)
+
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, None, workers=0)
 
