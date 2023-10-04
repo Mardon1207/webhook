@@ -1,4 +1,4 @@
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater, CommandHandler,MessageHandler,Filters
 import handlers
 from dotenv import load_dotenv
 import os
@@ -14,6 +14,7 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler('start', handlers.start))
+    dp.add_handler(MessageHandler(Filters.text("🐶DOG🐶"), handlers.dog))
 
     updater.start_polling()
     updater.idle()
