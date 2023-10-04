@@ -19,4 +19,4 @@ def set():
     url = 'https://mardon1207.pythonanywhere.com/webhook'
     print(bot.set_webhook(url=url))
 
-get_info()
+set()

@@ -1,6 +1,6 @@
 from flask import Flask, request
 from telegram import Bot, Update
-from telegram.ext import Dispatcher, CommandHandler
+from telegram.ext import Dispatcher, CommandHandler,MessageHandler,Filters
 import handlers
 from dotenv import load_dotenv
 import os
@@ -30,6 +30,7 @@ def webhook():
         update = Update.de_json(body, bot)
 
         dp.add_handler(CommandHandler(['start', 'boshlash'], handlers.start))
+        dp.add_handler(MessageHandler(Filters.text("🐶DOG🐶"), handlers.dog))
 
         dp.process_update(update)
 
